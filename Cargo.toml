@@ -10,13 +10,15 @@ repository = "https://github.com/hyperium/hyper-tls"
 documentation = "https://docs.rs/hyper-tls"
 
 [features]
+default = ["runtime"]
 vendored = ["native-tls/vendored"]
+runtime = ["hyper/runtime"]
 
 [dependencies]
 bytes = "0.4"
 futures = "0.1.21"
 native-tls = "0.2"
-hyper = "0.12"
+hyper = { version="0.12", default-features=false }
 tokio-io = "0.1"
 
 [dev-dependencies]
